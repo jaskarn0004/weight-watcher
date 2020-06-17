@@ -13,7 +13,7 @@ export class RegisterServiceService {
   constructor(private http: HttpClient) { }
 
   registerService(user: User) {    
-    return this.http.post<User>(`${config.apiUrl}/login/register`, user).pipe(
+    return this.http.post<User>(`${config.apiUrl}/register`, user).pipe(
       catchError(this.handleError)
     );       
   }
