@@ -1,2 +1,2 @@
-# weight-watchers
-weight-watchers
+# weight-watcher
+Angular application

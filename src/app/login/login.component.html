@@ -1,0 +1,64 @@
+<body class="bg-gradient-primary">
+
+  <div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="col-xl-10 col-lg-12 col-md-9">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+
+          <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">We prefer Apple!!</h1>
+                  </div>
+                  
+                  <form class="user" (ngSubmit)="onLogin(f.dirty)" #f="ngForm" >
+                    <div class="form-group">
+                      <input type="email" class="form-control form-control-user"
+                      placeholder="Enter Email Address..."
+                      required [(ngModel)]="loginModel.email" 
+                      [ngClass]="{'is-invalid': email.touched && email.invalid }"
+                      #email="ngModel" id="email" name="email">
+                      <div class="invalid-feedback text-center" *ngIf="email.touched && email.invalid">
+                        <div *ngIf="email.errors.required">Email is required.</div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control form-control-user" 
+                      placeholder="Password"
+                      required [(ngModel)]="loginModel.password" 
+                      [ngClass]="{'is-invalid': password.touched && password.invalid }"
+                      #password="ngModel" id="password" name="password">
+                      <div class="invalid-feedback text-center" *ngIf="password.touched && password.invalid">
+                        <div *ngIf="password.errors.required">Password is required.</div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-control"></div>
+                    </div>
+                    <h6 *ngIf="loginError" class="error">{{ loginError }}</h6>
+                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                      Login
+                    </button>
+                    <hr>
+                  </form>
+                  <div class="text-center">
+                    <a class="small" href="" routerLink="/register">Create an Account!</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>

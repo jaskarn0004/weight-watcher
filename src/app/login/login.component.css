@@ -1,0 +1,11 @@
+.bg-login-image {
+    background: url("/assets/img/Apple.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 80%;
+    text-align: center;
+}
